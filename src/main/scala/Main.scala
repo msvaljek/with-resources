@@ -15,6 +15,8 @@ object Main {
       resourceContent("generated-compile-resource.txt") == Some(
         "Content of generated-compile-resource.txt"))
     assert(resourceContent("non-existent-resource.txt") == None)
+    // We do this to check that environment variables work
+    sys.env.get("BLOOP_OWNER").getOrElse(sys.error("Missing BLOOP_OWNER env variable!"))
     println("OK")
   }
 
