@@ -1,4 +1,6 @@
 name := "with-resources"
+bloopAnalysisOut in Compile := bloopConfigDir.value / "custom.bin"
+bloopAnalysisOut in Test := bloopConfigDir.value / "custom-test.bin"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test"
 
